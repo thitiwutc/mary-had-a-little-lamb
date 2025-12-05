@@ -8,6 +8,9 @@ pub const WHOLE: NoteDuration = NoteDuration(1.0);
 pub const HALF: NoteDuration = NoteDuration(1.0 / 2.0);
 pub const QUARTER: NoteDuration = NoteDuration(1.0 / 4.0);
 pub const EIGHTH: NoteDuration = NoteDuration(1.0 / 8.0);
+pub const SIXTEENTH: NoteDuration = NoteDuration(1.0 / 16.0);
+pub const THIRTY_SECOND: NoteDuration = NoteDuration(1.0 / 32.0);
+pub const SIXTY_FOURTH: NoteDuration = NoteDuration(1.0 / 64.0);
 
 pub struct NoteFrequency(f32);
 
@@ -143,6 +146,11 @@ pub const A8: NoteFrequency = NoteFrequency(7040.00);
 pub const AS8: NoteFrequency = NoteFrequency(7458.62);
 pub const B8: NoteFrequency = NoteFrequency(7902.13);
 
+pub enum Sound {
+    Note(Note),
+    Rest(NoteDuration),
+}
+
 pub struct Note {
     pub freq: NoteFrequency,
     pub dur: NoteDuration,
@@ -155,16 +163,24 @@ impl Note {
 
     pub fn play(
         sink: &Sink,
-        notes: &[Note],
+        notes: &[Sound],
         whole_note_dur: Duration,
         dur_between_notes: Duration,
     ) {
         for note in notes {
-            let note_dur = whole_note_dur.mul_f32(note.dur.0);
-            let source = SineWave::new(note.freq.0).take_duration(note_dur);
+            match note {
+                Sound::Note(note) => {
+                    let note_dur = whole_note_dur.mul_f32(note.dur.0);
+                    let source = SineWave::new(note.freq.0).take_duration(note_dur);
 
-            sink.append(source);
-            thread::sleep(note_dur.add(dur_between_notes));
+                    sink.append(source);
+                    thread::sleep(note_dur.add(dur_between_notes));
+                }
+                Sound::Rest(rest_dur) => {
+                    let note_dur = whole_note_dur.mul_f32(rest_dur.0);
+                    thread::sleep(note_dur.add(dur_between_notes));
+                }
+            };
         }
 
         // Block the main thread until the Sink has played all appended sources.

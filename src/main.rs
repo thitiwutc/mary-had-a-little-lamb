@@ -1,4 +1,4 @@
-use mary_had_a_little_lamb::{self, A4, B4, D5, G4, HALF, Note, QUARTER, WHOLE};
+use mary_had_a_little_lamb::*;
 use std::time::Duration;
 
 fn main() {
@@ -8,31 +8,31 @@ fn main() {
 
     // หนูมาลี (Mary had a little lamb)
     let notes = [
-        Note::new(B4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(G4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(B4, QUARTER),
-        Note::new(B4, QUARTER),
-        Note::new(B4, HALF),
-        Note::new(A4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(A4, HALF),
-        Note::new(B4, QUARTER),
-        Note::new(D5, QUARTER),
-        Note::new(D5, HALF),
-        Note::new(B4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(G4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(B4, QUARTER),
-        Note::new(B4, QUARTER),
-        Note::new(B4, HALF),
-        Note::new(A4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(B4, QUARTER),
-        Note::new(A4, QUARTER),
-        Note::new(G4, WHOLE),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(G4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(B4, HALF)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(A4, HALF)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(D5, QUARTER)),
+        Sound::Note(Note::new(D5, HALF)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(G4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(B4, HALF)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(B4, QUARTER)),
+        Sound::Note(Note::new(A4, QUARTER)),
+        Sound::Note(Note::new(G4, WHOLE)),
     ];
 
     let whole_note_dur = Duration::from_secs_f32(1.2);
