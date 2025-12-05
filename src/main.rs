@@ -8,31 +8,31 @@ fn main() {
 
     // หนูมาลี (Mary had a little lamb)
     let notes = [
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(G4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(B4, HALF)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(A4, HALF)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(D5, QUARTER)),
-        Sound::Note(Note::new(D5, HALF)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(G4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(B4, HALF)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(B4, QUARTER)),
-        Sound::Note(Note::new(A4, QUARTER)),
-        Sound::Note(Note::new(G4, WHOLE)),
+        Sound::Note(Note::new(B4, QUARTER)), // หนู
+        Sound::Note(Note::new(A4, QUARTER)), // มา
+        Sound::Note(Note::new(G4, QUARTER)), // ลี
+        Sound::Note(Note::new(A4, QUARTER)), // มี
+        Sound::Note(Note::new(B4, QUARTER)), // ลูก
+        Sound::Note(Note::new(B4, QUARTER)), // แมว
+        Sound::Note(Note::new(B4, HALF)),    // เหมียว
+        Sound::Note(Note::new(A4, QUARTER)), // ลูก
+        Sound::Note(Note::new(A4, QUARTER)), // แมว
+        Sound::Note(Note::new(A4, HALF)),    // เหมียว
+        Sound::Note(Note::new(B4, QUARTER)), // ลูก
+        Sound::Note(Note::new(D5, QUARTER)), // แมว
+        Sound::Note(Note::new(D5, HALF)),    // เหมียว
+        Sound::Note(Note::new(B4, QUARTER)), // หนู
+        Sound::Note(Note::new(A4, QUARTER)), // มา
+        Sound::Note(Note::new(G4, QUARTER)), // ลี
+        Sound::Note(Note::new(A4, QUARTER)), // มี
+        Sound::Note(Note::new(B4, QUARTER)), // ลูก
+        Sound::Note(Note::new(B4, QUARTER)), // แมว
+        Sound::Note(Note::new(B4, HALF)),    // เหมียว
+        Sound::Note(Note::new(A4, QUARTER)), // ขน
+        Sound::Note(Note::new(A4, QUARTER)), // มัน
+        Sound::Note(Note::new(B4, QUARTER)), // คล้าย
+        Sound::Note(Note::new(A4, QUARTER)), // สำ
+        Sound::Note(Note::new(G4, WHOLE)),   // ลี
     ];
 
     let whole_note_dur = Duration::from_secs_f32(1.2);
